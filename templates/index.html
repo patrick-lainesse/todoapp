@@ -10,7 +10,23 @@
             list-style: none;
             padding: 0;
             margin: 0;
+            width: 200px;
         }
+
+        li {
+            clear: both;
+        }
+
+        li button {
+            -webkit-appearance: none;
+            border: none;
+            outline: none;
+            color: red;
+            float: right;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
     </style>
 </head>
 <body>
@@ -23,6 +39,7 @@
     {% for d in data %}
     <li><input class="check-completed" data-id="{{ d.id }}" type="checkbox" {% if d.completed %} checked {% endif %} />
         {{ d.description }}
+        <button>&cross;</button>
     </li>
     {% endfor %}
 </ul>
